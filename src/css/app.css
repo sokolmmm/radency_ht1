@@ -1,0 +1,43 @@
+@import './main-table.css';
+@import './summary-table.css';
+@import './popup.css';
+@import './buttons.css';
+@import './form-control.css';
+
+/*========== BASE ==========*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*========== WRAPPER ==========*/
+.wrapper {
+  width: 100vw;
+  background: var(--background-color);
+  min-height: 100vh;
+
+  font-family: 'Roboto', sans-serif;
+}

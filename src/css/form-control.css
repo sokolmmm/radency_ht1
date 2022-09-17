@@ -1,0 +1,83 @@
+@import './_variables.css';
+
+/*========== FORM-CONTROL ==========*/
+.form-control {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+}
+
+/*========== LABEL ==========*/
+.form-control__label {
+  font-family: var(--body-font);
+  font-size: var(--small-font-size);
+  font-style: normal;
+  font-weight: 500;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: var(--gray-color);
+}
+
+/*========== INPUT ==========*/
+.form-control__input {
+  border: 2px solid var(--border-color);
+  border-radius: 2px;
+  background: var(--form-control-background);
+  font-family: var(--body-font);
+  font-size: var(--smaller-font-size);
+  font-style: normal;
+  font-weight: 400;
+  padding: 0 15px;
+  color: var(--black-color);
+}
+
+.form-control__input:active,
+.form-control__input:focus {
+  outline: none;
+  border-left: 3px solid var(--green-color);
+  background: transparent;
+}
+
+/*========== SELECT-WRAPPER ==========*/
+.form-control__select-wrapper {
+  position: relative;
+}
+
+.form-control__select-wrapper::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  pointer-events: none;
+
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6px 5px 0 5px;
+  border-color: var(--gray-color) transparent transparent transparent;
+}
+
+/*========== SELECT ==========*/
+.form-control__select {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  background-color: var(--form-control-background);
+  border: 2px solid var(--border-color);
+  border-radius: 2px;
+  padding: 0 25px 0 15px;
+  cursor: pointer;
+
+  font-family: var(--body-font);
+  font-size: var(--smaller-font-size);
+  font-style: normal;
+  font-weight: 400;
+  color: var(--black-color);
+}
