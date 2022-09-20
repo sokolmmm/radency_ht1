@@ -3,7 +3,7 @@
 /*========== FORM-CONTROL ==========*/
 .form-control {
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 1fr 2fr 1fr;
 }
 
 /*========== LABEL ==========*/
@@ -80,4 +80,12 @@
   font-style: normal;
   font-weight: 400;
   color: var(--black-color);
+}
+
+/*========== ERROR ==========*/
+.form-control__error {
+  display: grid;
+  align-items: center;
+  font-size: var(--smaller-font-size);
+  color: red;
 }

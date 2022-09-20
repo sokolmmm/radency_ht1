@@ -93,6 +93,11 @@ class Note extends Notes {
   onAddButtonClick() {
     this.addNoteButton.addEventListener('click', (event) => this.#addNewNote(event));
   }
+
+  inputsValidator() {
+    this.#popup.onNameInputChange();
+    this.#popup.onContentInputChange();
+  }
 }
 
 export default Note;

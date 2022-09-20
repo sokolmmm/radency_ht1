@@ -17,10 +17,6 @@
   transition: 0.05s ease-in-out;
 }
 
-.tab-button:disabled {
-
-}
-
 .tab-button {
   background: var(--background-alt-color);
 }
@@ -105,6 +101,11 @@
 
 .main-button:hover img {
   transform: translateX(10px);
+}
+
+.main-button:disabled {
+  pointer-events: none;
+  opacity: 0.65;
 }
 
 @media screen and (max-width: 420px) {

@@ -6,6 +6,7 @@ function initApp() {
   note.initNotes();
   note.onTabClick();
   note.onTableHeaderClick();
+  note.inputsValidator();
   note.onNoteClick();
   note.onAddButtonClick();
 }
