@@ -15,7 +15,6 @@ class Notes {
 
   constructor(initialValue) {
     this.notesData = initialValue;
-    this.initNotes();
   }
 
   #clearNoteList() {
@@ -113,7 +112,7 @@ class Notes {
     this.showActiveNotes();
   }
 
-  onHeaderClick() {
+  onTableHeaderClick() {
     this.#tableHeader.addEventListener('click', (event) => {
       if (event.target.id === 'deleteAllNotes') {
         this.#deleteNotes();

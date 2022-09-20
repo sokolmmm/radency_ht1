@@ -1,11 +1,12 @@
-import Notes from './notes';
+import Note from './note';
 import dataBase from './helpers/dataBase';
 
 function initApp() {
-  const notes = new Notes(dataBase);
-  notes.initNotes();
-  notes.onTabClick();
-  notes.onHeaderClick();
+  const note = new Note(dataBase);
+  note.initNotes();
+  note.onTabClick();
+  note.onTableHeaderClick();
+  note.onNoteClick();
 }
 
 export default initApp;
