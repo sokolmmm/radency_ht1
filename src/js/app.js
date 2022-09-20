@@ -1,7 +1,9 @@
-class App {
-  init() {
-    console.log('init');
-  }
+import Notes from './notes';
+import dataBase from './helpers/dataBase';
+
+function initApp() {
+  const notes = new Notes(dataBase);
+  notes.initNotes();
 }
 
-export default App;
+export default initApp;

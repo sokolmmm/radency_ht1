@@ -1,4 +1,4 @@
-const notesModel = [
+const dataBase = [
   {
     id: '4b003292-8f21-4b6b-82ff-289691eb624b',
     name: 'Shopping list',
@@ -64,4 +64,4 @@ const notesModel = [
   },
 ];
 
-export default notesModel;
+export default dataBase;
