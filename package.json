@@ -32,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/sokolmmm/radency_html/issues"
   },
-  "homepage": "https://github.com/sokolmmm/radency_html#readme"
+  "homepage": "https://github.com/sokolmmm/radency_html#readme",
+  "dependencies": {
+    "uuid": "^9.0.0"
+  }
 }

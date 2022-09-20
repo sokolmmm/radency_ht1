@@ -121,6 +121,16 @@
   padding-left: 0;
 }
 
+#deleteNote {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+#archiveNoteButton {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
 /*========== MEDIA-QUERY ==========*/
 @media screen and (max-width: 768px) {
   /*========== TABS, TABLE, TABLE-HEADER ==========*/
@@ -186,6 +196,16 @@
     grid-template-rows: 1fr 1fr 1fr;
     row-gap: 10px;
     justify-self: center;
+  }
+
+  #deleteNote {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  
+  #archiveNoteButton {
+    grid-column-start: 1;
+    grid-column-end: 2;
   }
 
   .note__item span {
