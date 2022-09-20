@@ -24,6 +24,15 @@ class Notes {
     }
   }
 
+  #deleteNotes() {
+    if (this.#activeTab === this.#activeNotesTabButton) {
+      this.notesData = this.notesData.filter((el) => !el.isActive);
+    } else if (this.#activeTab === this.#archivedNotesTabButton) {
+      this.notesData = this.notesData.filter((el) => el.isActive);
+    }
+    this.#clearNoteList();
+  }
+
   #mapNotes(condition) {
     this.notesData = this.notesData.map((el) => {
       if (el.isActive === condition) {
@@ -102,6 +111,16 @@ class Notes {
       this.#activeTab = this.#activeNotesTabButton;
     }
     this.showActiveNotes();
+  }
+
+  onHeaderClick() {
+    this.#tableHeader.addEventListener('click', (event) => {
+      if (event.target.id === 'deleteAllNotes') {
+        this.#deleteNotes();
+      } else if (event.target.id === 'archiveAllNotes') {
+        this.#allNotesStatusToggle();
+      }
+    });
   }
 }
 

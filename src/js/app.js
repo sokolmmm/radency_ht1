@@ -5,6 +5,7 @@ function initApp() {
   const notes = new Notes(dataBase);
   notes.initNotes();
   notes.onTabClick();
+  notes.onHeaderClick();
 }
 
 export default initApp;
