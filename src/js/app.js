@@ -7,6 +7,7 @@ function initApp() {
   note.onTabClick();
   note.onTableHeaderClick();
   note.onNoteClick();
+  note.onAddButtonClick();
 }
 
 export default initApp;
