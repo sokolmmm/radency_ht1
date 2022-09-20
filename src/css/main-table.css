@@ -103,6 +103,7 @@
 .note__item {
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
   padding-left: 10px;
 
   font-family: var(--body-font);

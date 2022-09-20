@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import Notes from './notes';
 import Popup from './popup';
+import DateUtils from './utils/datesUtils';
 
 class Note extends Notes {
   #popup = new Popup();
@@ -50,17 +51,19 @@ class Note extends Notes {
   }
 
   #saveNewNote(newData) {
-    const now = new Date();
-    const enDate = new Intl.DateTimeFormat('en-UK');
-    const formatDate = enDate.format(now);
+    const { name, category, content } = newData;
+
+    const created = DateUtils.getFormattedNowDate();
+
+    const dates = DateUtils.getDate(content);
 
     const newNote = {
       id: uuidv4(),
-      name: newData.name,
-      created: formatDate,
-      category: newData.category,
-      content: newData.content,
-      dates: '',
+      name,
+      created,
+      category,
+      content,
+      dates,
       isActive: true,
     };
 

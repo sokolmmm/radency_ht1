@@ -2,7 +2,7 @@ const dataBase = [
   {
     id: '4b003292-8f21-4b6b-82ff-289691eb624b',
     name: 'Shopping list',
-    created: '10.05.2022',
+    created: '10/05/2022',
     category: 'Task',
     content: 'Tomatoes, bread',
     dates: '',
@@ -11,7 +11,7 @@ const dataBase = [
   {
     id: '4b003292-8f21-4b6b-82ff-289691eb62422',
     name: 'Fly to Mars ',
-    created: '20.05.2022',
+    created: '20/05/2022',
     category: 'Random thought',
     content: 'I think I need to fly to Mars ',
     dates: '',
@@ -20,7 +20,7 @@ const dataBase = [
   {
     id: '4b003292-8f21-4b6b-82ff-289691eb62sd4sds4b',
     name: 'New feature',
-    created: '15.09.2022',
+    created: '15/09/2022',
     category: 'Idea',
     content: 'Add validation to inputs',
     dates: '',
@@ -29,7 +29,7 @@ const dataBase = [
   {
     id: '4b00d2d233292-8f21-445b-82ff-289691eb624b',
     name: 'Home task 1',
-    created: '10.09.2022',
+    created: '10/09/2022',
     category: 'Task',
     content: 'Complete the task by 20-09-2022',
     dates: '20/09/2022',
@@ -38,7 +38,7 @@ const dataBase = [
   {
     id: '4b003292-8f21-4b6b-79ff-289691eb6w2322132sd24b',
     name: 'Home task 2',
-    created: '10.09.2022',
+    created: '10/09/2022',
     category: 'Task',
     content: 'Complete the task by 25-09-2022',
     dates: '25/09/2022',
@@ -47,7 +47,7 @@ const dataBase = [
   {
     id: '4b003292-8f21-4b6b-80ff-289691eb6w2322132sd24b',
     name: 'Home task 3',
-    created: '10.09.2022',
+    created: '10/09/2022',
     category: 'Task',
     content: 'Complete the task by 30-09-2022',
     dates: '30/09/2022',
@@ -56,7 +56,7 @@ const dataBase = [
   {
     id: '4b003292-8f21-4b6b-81ff-289691eb6w2322132sd24b',
     name: 'Books',
-    created: '10.02.2022',
+    created: '10/02/2022',
     category: 'Task',
     content: 'The Lord of the Rings',
     dates: '',
