@@ -26,6 +26,36 @@ class Popup {
     this.#popup.classList.add('hide');
   }
 
+  #disableSaveButton() {
+    this.#saveNoteButton.disabled = true;
+  }
+
+  #enableSaveButton() {
+    this.#saveNoteButton.disabled = false;
+  }
+
+  #setIsValidStatus() {
+    this.#isValid.name = true;
+    this.#isValid.name = true;
+  }
+
+  #inputValidate(name, secondProp, id, value) {
+    this.#isValid[name] = false;
+
+    const result = Validator.inputValidate({ name, value });
+
+    const errorBlock = document.querySelector(id);
+
+    if (!result.isValid) {
+      errorBlock.textContent = result.errorMessage;
+      this.#disableSaveButton();
+    } else {
+      errorBlock.textContent = '';
+      this.#isValid[name] = true;
+      if (this.#isValid[secondProp]) this.#enableSaveButton();
+    }
+  }
+
   #resetValues() {
     this.#nameInput.value = '';
     this.#contentInput.value = '';
@@ -65,17 +95,11 @@ class Popup {
     };
   }
 
-  #disableSaveButton() {
-    this.#saveNoteButton.disabled = true;
-  }
-
-  #enableSaveButton() {
-    this.#saveNoteButton.disabled = false;
-  }
-
   showEditNoteWindow(prevData) {
     this.#showPopup();
     this.#setInitialValues(prevData);
+    this.#setIsValidStatus();
+    this.#enableSaveButton();
   }
 
   showAddNoteWindow() {
@@ -108,23 +132,6 @@ class Popup {
     this.#saveNoteButton.addEventListener('click', this.#saveNewNote(callback), {
       once: true,
     });
-  }
-
-  #inputValidate(name, secondProp, id, value) {
-    this.#isValid[name] = false;
-
-    const result = Validator.inputValidate({ name, value });
-
-    const errorBlock = document.querySelector(id);
-
-    if (!result.isValid) {
-      errorBlock.textContent = result.errorMessage;
-      this.#disableSaveButton();
-    } else {
-      errorBlock.textContent = '';
-      this.#isValid[name] = true;
-      if (this.#isValid[secondProp]) this.#enableSaveButton();
-    }
   }
 
   onNameInputChange() {
