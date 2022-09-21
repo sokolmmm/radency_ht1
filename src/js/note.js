@@ -15,6 +15,7 @@ class Note extends Notes {
 
     this.notesData.splice(noteIndex, 1);
     parenNode.remove();
+    this.summaryTable.showResult(this.notesData);
   }
 
   #toggleStatus(event) {
@@ -23,6 +24,7 @@ class Note extends Notes {
 
     this.notesData[noteIndex].isActive = !this.notesData[noteIndex].isActive;
     parenNode.remove();
+    this.summaryTable.showResult(this.notesData);
   }
 
   #saveEditedNote(prevData, newData, index) {

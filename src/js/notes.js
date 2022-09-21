@@ -14,7 +14,7 @@ class Notes {
 
   #activeTab = this.#activeNotesTabButton;
 
-  #summaryTable = new SummaryTable();
+  summaryTable = new SummaryTable();
 
   constructor(initialValue) {
     this.notesData = initialValue;
@@ -33,7 +33,7 @@ class Notes {
       this.notesData = this.notesData.filter((el) => el.isActive);
     }
     this.#clearNoteList();
-    this.#summaryTable.showResult(this.notesData);
+    this.summaryTable.showResult(this.notesData);
   }
 
   #mapNotes(condition) {
@@ -52,7 +52,7 @@ class Notes {
       this.#mapNotes(false);
     }
     this.#clearNoteList();
-    this.#summaryTable.showResult(this.notesData);
+    this.summaryTable.showResult(this.notesData);
   }
 
   #showNotes(condition) {
@@ -70,7 +70,7 @@ class Notes {
       }
     });
     this.notesList.insertAdjacentHTML('beforeend', html);
-    this.#summaryTable.showResult(this.notesData);
+    this.summaryTable.showResult(this.notesData);
   }
 
   #tabToggle(firstTab, secondTab, showNotesFunction) {
