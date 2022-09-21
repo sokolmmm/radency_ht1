@@ -1,0 +1,26 @@
+:root {
+  /*========== COLORS ==========*/
+  --green-color: #50c2c9;
+  --gray-color: #546087;
+  --white-color: #ffffff;
+  --black-color: #222428;
+  --overlay-color: rgba(0, 0, 0, 0.5);
+
+  --border-color: #f2f2f2;
+
+  --background-color: #eeeeee;
+  --background-alt-color: #ffffff;
+  --form-control-background: #fcfcfc;
+
+  /*========== FONT, TYPOGRAPHY ==========*/
+  --body-font: 'Roboto', sans-serif;
+  --title-font: 'Exo 2', sans-serif;
+
+  --title-font-size: 28px;
+  --normal-font-size: 18px;
+  --small-font-size: 16px;
+  --smaller-font-size: 14px;
+
+  /*========== SHADOWS ==========*/
+  --primary-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+}

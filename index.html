@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="main-table">
+        <header class="tabs">
+          <button type="button" id="activeNotesTab" class="tab-button tab-button-active" >Active</button>
+          <button type="button" id="archivedNotesTab" class="tab-button">archived</button>
+        </header>
+        <div class="table">
+          <header class="table-header">
+            <ul class="table-header__list">
+              <li class="table-header__item">
+                <span>Name</span>
+              </li>
+              <li class="table-header__item">
+                <span>Created</span>
+              </li>
+              <li class="table-header__item">
+                <span>Category</span>
+              </li>
+              <li class="table-header__item">
+                <span>Content</span>
+              </li>
+              <li class="table-header__item">
+                <span>Dates</span>
+              </li>
+              <li class="table-header__item">
+                <button type="button" id="archiveAllNotes" class="icon__button">
+                  <img src="./src/images/archive.png" alt="Archive task button">
+                </button>
+                <button type="button" id="deleteAllNotes" class="icon__button">
+                  <img src="./src/images/delete.png" alt="Delete task button">
+                </button>
+              </li>
+          </header>
+          <div class="notes">
+          </div>
+        </div>
+        <button type="button" class="main-button" id="addNoteButton"> 
+          <span>Create Note</span>
+          <img src="./src/images/arrow.png" alt="arrow image">
+        </button>
+      </section>
+     
+      <section class="summary-table">
+        <div class="table">
+          <header class="table-header-alt">
+            <ul class="table-header-alt__list">
+              <li class="table-header-alt__item">
+                <span>Note category</span>
+              </li>
+              <li class="table-header-alt__item">
+                <span>Active</span>
+              </li>
+              <li class="table-header-alt__item">
+                <span>Archived</span>
+              </li>
+          </header>
+          <div class="summary-notes">
+            <div class="summary-note">
+              <ul class="summary-note__header-list">
+                <li class="summary-note__header-item">
+                  <span> Note category</span>
+                </li>
+                <li class="summary-note_header-item">
+                  <span>Active</span>
+                </li>
+                <li class="summary-note_header-item">
+                  <span>Archived</span>
+                </li>
+              </ul>
+              <ul class="summary-note__list">
+                <li class="summary-note__item">
+                  <span>Task</span>
+                </li>
+                <li class="summary-note__item">
+                  <span id="taskActiveCount">0</span>
+                </li>
+                <li class="summary-note__item">
+                  <span id="taskArchivedCount">0</span>
+                </li>
+              </ul>
+            </div>
+            <div class="summary-note">
+              <ul class="summary-note__header-list">
+                <li class="summary-note__header-item">
+                  <span> Note category</span>
+                </li>
+                <li class="summary-note_header-item">
+                  <span>Active</span>
+                </li>
+                <li class="summary-note_header-item">
+                  <span>Archived</span>
+                </li>
+              </ul>
+              <ul class="summary-note__list">
+                <li class="summary-note__item">
+                  <span>Random Thought</span>
+                </li>
+                <li class="summary-note__item">
+                  <span id="randomThoughtActiveCount">0</span>
+                </li>
+                <li class="summary-note__item">
+                  <span id="randomThoughtArchivedCount">0</span>
+                </li>
+              </ul>
+            </div>
+            <div class="summary-note">
+              <ul class="summary-note__header-list">
+                <li class="summary-note__header-item">
+                  <span> Note category</span>
+                </li>
+                <li class="summary-note_header-item">
+                  <span>Active</span>
+                </li>
+                <li class="summary-note_header-item">
+                  <span>Archived</span>
+                </li>
+              </ul>
+              <ul class="summary-note__list">
+                <li class="summary-note__item">
+                  <span>Idea</span>
+                </li>
+                <li class="summary-note__item">
+                  <span id="ideaActiveCount">0</span>
+                </li>
+                <li class="summary-note__item">
+                  <span id="ideaArchivedCount">0</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <div class="popup-wrapper hide">
+        <section class="popup-window">
+          <header class="popup-header">
+            <h3 class="popup-header__title">Create note</h3>
+            <button type="button" id="closePopupButton" class="icon__button">
+              <img src="./src/images/close.png" alt="Close window">
+            </button>
+          </header>
+
+          <form class="popup-form">
+            <div class="form-control">
+              <label class="form-control__label" for="name">Name</label>
+              <input class="form-control__input" type="text" name="name">
+              <div class="form-control__error" id="nameInputError"></div>
+            </div>
+
+            <div class="form-control">
+              <label class="form-control__label" for="category">Category</label>
+              <div class="form-control__select-wrapper">
+                <select class="form-control__select" name="category">
+                  <option value="Task">Task</option>
+                  <option value="Random thought" selected>Random Thought</option>
+                  <option value="Idea">Idea</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-control">
+              <label class="form-control__label" for="content">Content</label>
+              <input class="form-control__input" type="text" name="content">
+              <div class="form-control__error" id="contentInputError"></div>
+            </div>
+
+            <button type="button" id="saveNoteButton" class="main-button"> 
+              Save note
+            </button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

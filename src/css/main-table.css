@@ -1,0 +1,215 @@
+@import './_variables.css';
+
+/*========== MAIN-TABLE ==========*/
+.main-table {
+  display: grid;
+  grid-template-rows: 40px auto 40px;
+  row-gap: 20px;
+
+  padding: 20px 20px 0 20px;
+}
+
+/*========== TABS ==========*/
+.tabs {
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 300px 300px;
+}
+
+.tab-button:nth-child(1) {
+  border-radius: 15px 0 0 15px;
+}
+
+.tab-button:nth-child(2) {
+  border-radius: 0 15px 15px 0;
+}
+
+/*========== TABLE ==========*/
+.table {
+  display: grid;
+  grid-template-rows: 40px auto;
+  row-gap: 10px;
+}
+
+/*========== TABLE-HEADER ==========*/
+.table-header {
+  background: var(--green-color);
+  border-radius: 10px;
+  padding: 0 20px;
+  box-shadow: var(--primary-shadow);
+}
+
+/*========== TABLE-HEADER__LIST ==========*/
+.table-header__list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 80px;
+  align-items: center;
+
+  height: 100%;
+}
+
+/*========== TABLE-HEADER__ITEM ==========*/
+.table-header__item {
+  white-space: nowrap;
+  overflow: hidden;
+  padding-left: 10px;
+
+  font-family: var(--title-font);
+  font-size: var(--normal-font-size);
+  font-weight: 600;
+  color: var(--white-color);
+}
+
+.table-header__item:last-child {
+  justify-self: end;
+  display: grid;
+  grid-template-rows: 20px;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+
+  padding-left: 0;
+}
+
+/*========== NOTES ==========*/
+/*========== NOTES ==========*/
+.notes {
+  display: grid;
+  row-gap: 10px;
+}
+
+/*========== NOTE ==========*/
+.note {
+  height: 60px;
+  padding: 0 20px;
+  border-radius: 10px;
+  background: var(--white-color);
+  box-shadow: var(--primary-shadow);
+}
+/*========== NOTE__HEADER-LIST ==========*/
+.note__header-list {
+  display: none;
+}
+
+/*========== NOTE__LIST ==========*/
+.note__list {
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr) 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*========== NOTE__ITEM ==========*/
+.note__item {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 10px;
+
+  font-family: var(--body-font);
+  font-size: var(--smaller-font-size);
+  font-weight: 400;
+  color: var(--gray-color);
+}
+
+.note__item:last-child {
+  justify-self: end;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+
+  padding-left: 0;
+}
+
+#deleteNote {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
+#archiveNoteButton {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+/*========== MEDIA-QUERY ==========*/
+@media screen and (max-width: 768px) {
+  /*========== TABS, TABLE, TABLE-HEADER ==========*/
+  .tabs {
+    justify-self: stretch;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .table {
+    grid-template-rows: auto;
+  }
+
+  .table-header {
+    display: none;
+  }
+
+  /*========== NOTE ==========*/
+  .note {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    height: auto;
+    padding: 0;
+    border-radius: 15px;
+  }
+
+  /*========== NOTE__HEADER-LIST ==========*/
+  .note__header-list {
+    display: grid;
+    grid-template-rows: repeat(5, 20px);
+    background: var(--green-color);
+    padding: 10px 5px 10px 10px;
+    border-radius: 15px 0 0 15px;
+
+    font-family: var(--title-font);
+    font-weight: 600;
+    font-size: var(--smaller-font-size);
+    color: var(--white-color);
+  }
+
+  /*========== NOTE__LIST ==========*/
+  .note__list {
+    padding: 10px;
+    height: 100%;
+    grid-template-rows: repeat(5, 20px);
+    grid-template-columns: 1fr 40px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /*========== NOTE__ITEM ==========*/
+  .note__item {
+    display: grid;
+    padding-left: 0;
+  }
+
+  .note__item:last-child {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 6;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 10px;
+    justify-self: center;
+  }
+
+  #deleteNote {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  
+  #archiveNoteButton {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .note__item span {
+    background: var(--white-color);
+  }
+}
